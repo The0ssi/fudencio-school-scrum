@@ -31,7 +31,7 @@ const GameplayDemo = () => {
     setIsAttacking(true);
     
     // Play attack sound effect
-    const audio = new Audio('/attack-sound.mp3'); // Would need to create this sound file
+    const audio = new Audio('/attack-sound.mp3');
     audio.volume = 0.3;
     audio.play().catch(() => {
       console.log('Audio playback prevented due to browser restrictions');
@@ -43,6 +43,13 @@ const GameplayDemo = () => {
   // Handle enemy collision with player
   const handleEnemyCollision = (id: number) => {
     if (!gameOver) {
+      // Efeito sonoro de dano
+      const hitSound = new Audio('/hit-sound.mp3'); // (precisaria ser criado)
+      hitSound.volume = 0.2;
+      hitSound.play().catch(() => {
+        console.log('Audio playback prevented due to browser restrictions');
+      });
+      
       setPlayerHealth(prev => {
         const newHealth = Math.max(0, prev - 5);
         if (newHealth <= 0) {
@@ -149,7 +156,7 @@ const GameplayDemo = () => {
           <div 
             className="game-scene relative w-full h-[300px] overflow-hidden border-4 border-black"
             style={{
-              backgroundImage: "url('/corridor-bg.png')", // Would need to create this image
+              backgroundImage: "url('/corridor-bg.png')",
               backgroundSize: "cover",
               backgroundRepeat: "repeat-x",
               imageRendering: "pixelated"
@@ -159,7 +166,7 @@ const GameplayDemo = () => {
             <div className="absolute bottom-0 w-full h-12 bg-fudencio-dark"></div>
             
             {/* Player character */}
-            <PlayerCharacter onAttack={handlePlayerAttack} />
+            <PlayerCharacter onAttack={handlePlayerAttack} onPositionChange={updatePlayerPosition} />
             
             {/* Enemies */}
             {enemies.map(enemy => (

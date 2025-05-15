@@ -29,11 +29,15 @@ const Enemy = ({
     const moveInterval = setInterval(() => {
       setDirection(playerPosition > enemyPosition ? 'right' : 'left');
       
-      // Move towards player
+      // Move towards player - velocidade variável baseada na distância
       setEnemyPosition(prev => {
+        const distance = Math.abs(playerPosition - prev);
+        const speedFactor = distance > 20 ? 2 : 1; // Move mais rápido quando distante
+        const moveStep = 1 * speedFactor;
+        
         const newPos = playerPosition > prev 
-          ? prev + 1 
-          : prev - 1;
+          ? prev + moveStep 
+          : prev - moveStep;
           
         // Check collision
         if (Math.abs(newPos - playerPosition) < 5) {
@@ -65,7 +69,7 @@ const Enemy = ({
     <div 
       className={cn(
         "enemy absolute bottom-0 transition-all",
-        isHit ? "animate-shake text-red-500" : ""
+        isHit ? "animate-shake bg-red-500" : ""
       )}
       style={{ 
         left: `${enemyPosition}%`,
@@ -73,13 +77,20 @@ const Enemy = ({
         opacity: health / 100
       }}
     >
-      {/* Placeholder enemy image - would be replaced with actual character */}
-      <div className="bg-fudencio-dark text-white p-2 h-20 w-16 flex items-center justify-center pixel-borders">
+      {/* Inimigo com melhor feedback visual */}
+      <div className={cn(
+        "bg-fudencio-dark text-white p-2 h-20 w-16 flex items-center justify-center pixel-borders",
+        isHit ? "border-red-500 border-4" : ""
+      )}>
         <span className="text-xs">Aluno<br/>Valentão</span>
+        
+        {isHit && (
+          <div className="absolute inset-0 bg-red-500 opacity-50 animate-pulse"></div>
+        )}
       </div>
       
-      {/* Health bar */}
-      <div className="w-full h-1 bg-red-900">
+      {/* Health bar with improved visibility */}
+      <div className="w-full h-2 bg-red-900">
         <div 
           className="h-full bg-red-500"
           style={{ width: `${health}%` }}

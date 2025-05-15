@@ -60,6 +60,32 @@
     @apply hover:scale-110 transition-transform hover:border-fudencio-yellow;
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 24 24'%3E%3Cpath fill='%23ea384c' d='M13 1L0 14h11v9l2-1V14h11L13 1z'/%3E%3C/svg%3E"), auto;
   }
+  
+  /* Game specific styles */
+  .game-scene {
+    image-rendering: pixelated;
+    background-color: #221F26;
+  }
+  
+  /* Sprite animations */
+  .player {
+    image-rendering: pixelated;
+    z-index: 10;
+  }
+  
+  .player.attacking {
+    animation: attack 0.3s ease-in-out;
+  }
+  
+  .enemy {
+    image-rendering: pixelated;
+    z-index: 5;
+  }
+  
+  /* Pixelated rendering */
+  .pixelated {
+    image-rendering: pixelated;
+  }
 }
 
 .ms-paint-bg {
@@ -83,4 +109,10 @@
   60% { transform: translate(3px, 3px); }
   80% { transform: translate(3px, -3px); }
   100% { transform: translate(0); }
+}
+
+@keyframes attack {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
 }

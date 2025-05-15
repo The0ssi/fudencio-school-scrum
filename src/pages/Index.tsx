@@ -5,8 +5,12 @@ import CharacterSelection from '@/components/CharacterSelection';
 import SceneCollection from '@/components/SceneCollection';
 import GameplayFeatures from '@/components/GameplayFeatures';
 import { Button } from "@/components/ui/button";
+import { useNavigate } from 'react-router-dom';
+import { Sword } from 'lucide-react';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen w-full ms-paint-bg">
       <div className="container mx-auto px-4 py-8">
@@ -19,8 +23,11 @@ const Index = () => {
           </p>
 
           <div className="flex gap-4 mt-6">
-            <Button className="bg-fudencio-red hover:bg-fudencio-red/80 text-white text-xl px-8 py-6 font-pixel">
-              Jogar Agora
+            <Button 
+              className="bg-fudencio-red hover:bg-fudencio-red/80 text-white text-xl px-8 py-6 font-pixel"
+              onClick={() => navigate('/game')}
+            >
+              <Sword className="mr-2" /> Jogar Demo
             </Button>
             <Button className="bg-fudencio-dark border-2 border-fudencio-yellow hover:bg-fudencio-yellow/20 text-fudencio-yellow text-xl px-8 py-6 font-pixel">
               Tutorial

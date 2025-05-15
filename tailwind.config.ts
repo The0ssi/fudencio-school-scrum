@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,20 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Cores específicas do jogo
+				'fudencio-red': '#ea384c',
+				'fudencio-yellow': '#F9D71C',
+				'fudencio-blue': '#1EAEDB',
+				'fudencio-pink': '#D946EF',
+				'fudencio-purple': '#8B5CF6',
+				'fudencio-green': '#10B981',
+				'fudencio-orange': '#F97316',
+				'fudencio-dark': '#221F26',
+			},
+			fontFamily: {
+				'pixel': ['VT323', 'monospace'],
+				'comic': ['Comic Sans MS', 'cursive'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +98,22 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				shake: {
+					'0%, 100%': { transform: 'translateX(0)' },
+					'10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-5px)' },
+					'20%, 40%, 60%, 80%': { transform: 'translateX(5px)' },
+				},
+				bounce: {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' },
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'shake': 'shake 0.5s ease-in-out infinite',
+				'bounce': 'bounce 0.5s ease-in-out infinite',
 			}
 		}
 	},

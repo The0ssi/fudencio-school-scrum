@@ -9,6 +9,7 @@ interface EnemyProps {
   isAttacked: boolean;
   onCollision: (id: number) => void;
   onEnemyDefeated: (id: number) => void;
+  difficulty: number; // Novo parâmetro para controlar a dificuldade progressiva
 }
 
 const Enemy = ({ 
@@ -17,7 +18,8 @@ const Enemy = ({
   playerPosition, 
   isAttacked, 
   onCollision, 
-  onEnemyDefeated 
+  onEnemyDefeated,
+  difficulty 
 }: EnemyProps) => {
   const [enemyPosition, setEnemyPosition] = useState(position);
   const [health, setHealth] = useState(100);
@@ -29,27 +31,28 @@ const Enemy = ({
     const moveInterval = setInterval(() => {
       setDirection(playerPosition > enemyPosition ? 'right' : 'left');
       
-      // Move towards player - velocidade variável baseada na distância
+      // Move towards player - velocidade variável baseada na distância e dificuldade
       setEnemyPosition(prev => {
         const distance = Math.abs(playerPosition - prev);
-        const speedFactor = distance > 20 ? 2 : 1; // Move mais rápido quando distante
+        // A dificuldade agora influencia diretamente a velocidade
+        const speedFactor = (distance > 20 ? 2 : 1) * (1 + difficulty * 0.2);
         const moveStep = 1 * speedFactor;
         
         const newPos = playerPosition > prev 
           ? prev + moveStep 
           : prev - moveStep;
           
-        // Check collision
-        if (Math.abs(newPos - playerPosition) < 5) {
+        // Check collision - os inimigos atacam mais frequentemente com o aumento da dificuldade
+        if (Math.abs(newPos - playerPosition) < 5 + (difficulty * 1.5)) {
           onCollision(id);
         }
         
         return newPos;
       });
-    }, 200);
+    }, Math.max(200 - difficulty * 15, 80)); // Tempo de movimento reduz com a dificuldade, mínimo de 80ms
     
     return () => clearInterval(moveInterval);
-  }, [playerPosition, enemyPosition, id, onCollision]);
+  }, [playerPosition, enemyPosition, id, onCollision, difficulty]);
   
   // Handle attacks
   useEffect(() => {

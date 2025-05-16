@@ -1,6 +1,6 @@
+
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
-import { Sword } from 'lucide-react';
 
 interface PlayerCharacterProps {
   onAttack: () => void;
@@ -24,11 +24,11 @@ const PlayerCharacter = ({ onAttack, onPositionChange }: PlayerCharacterProps) =
   useEffect(() => {
     const handleKeydown = (e: KeyboardEvent) => {
       if (e.key === 'ArrowLeft') {
-        setPosition(prev => Math.max(0, prev - 15));
+        setPosition(prev => Math.max(0, prev - 8)); // Velocidade reduzida de 15 para 8
         setFacingDirection('left');
       }
       if (e.key === 'ArrowRight') {
-        setPosition(prev => Math.min(85, prev + 15));
+        setPosition(prev => Math.min(85, prev + 8)); // Velocidade reduzida de 15 para 8
         setFacingDirection('right');
       }
       if (e.key === ' ' && !isJumping) {
@@ -63,19 +63,12 @@ const PlayerCharacter = ({ onAttack, onPositionChange }: PlayerCharacterProps) =
     >
       <div className="relative">
         {isAttacking && (
-          <>
-            <div className={cn(
-              "absolute comic-text animate-fade-out text-xl font-bold",
-              facingDirection === 'right' ? "left-12" : "right-12"
-            )}>
-              *PIIII*
-            </div>
-            {/* Efeito de onda de ataque */}
-            <div className={cn(
-              "absolute w-24 h-16 rounded-full bg-fudencio-yellow opacity-70 animate-pulse",
-              facingDirection === 'right' ? "left-12 -top-4" : "right-12 -top-4"
-            )} />
-          </>
+          <div className={cn(
+            "absolute comic-text bg-white px-3 py-2 rounded-lg border-2 border-black",
+            facingDirection === 'right' ? "left-12 -top-10" : "right-12 -top-10"
+          )}>
+            mimimi
+          </div>
         )}
         <img 
           src="https://static.wikia.nocookie.net/fudencio/images/1/1d/Fud%C3%AAncio_PNG.png"

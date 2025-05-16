@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import PlayerCharacter from './PlayerCharacter';
 import Enemy from './Enemy';
@@ -19,6 +20,7 @@ const GameplayDemo = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
+  const [difficultyLevel, setDifficultyLevel] = useState(0); // Novo estado para controlar a dificuldade
   const { toast } = useToast();
   
   // Track player position from PlayerCharacter component
@@ -77,12 +79,24 @@ const GameplayDemo = () => {
     });
   };
   
+  // Aumentar a dificuldade progressivamente com o tempo
+  useEffect(() => {
+    if (!gameStarted || gameOver) return;
+    
+    const difficultyTimer = setInterval(() => {
+      setDifficultyLevel(prev => Math.min(prev + 1, 10)); // Máximo de 10 níveis de dificuldade
+    }, 15000); // A cada 15 segundos aumenta a dificuldade
+    
+    return () => clearInterval(difficultyTimer);
+  }, [gameStarted, gameOver]);
+  
   // Spawn enemies periodically
   useEffect(() => {
     if (!gameStarted || gameOver) return;
     
+    // Velocidade de spawn aumenta com a dificuldade
     const spawnInterval = setInterval(() => {
-      if (enemies.length < 3) {
+      if (enemies.length < 3 + Math.floor(difficultyLevel / 3)) { // Mais inimigos em níveis mais altos
         // Spawn from left or right
         const spawnFromRight = Math.random() > 0.5;
         setEnemies(prev => [
@@ -93,10 +107,10 @@ const GameplayDemo = () => {
           }
         ]);
       }
-    }, 3000);
+    }, Math.max(3000 - (difficultyLevel * 200), 1000)); // Spawn mais rápido com maior dificuldade, mínimo 1 segundo
     
     return () => clearInterval(spawnInterval);
-  }, [gameStarted, gameOver, enemies.length]);
+  }, [gameStarted, gameOver, enemies.length, difficultyLevel]);
   
   // Start the game
   const startGame = () => {
@@ -105,6 +119,7 @@ const GameplayDemo = () => {
     setPlayerHealth(100);
     setScore(0);
     setEnemies([]);
+    setDifficultyLevel(0);
     
     toast({
       title: "Jogo Iniciado!",
@@ -150,6 +165,11 @@ const GameplayDemo = () => {
             <div className="bg-black bg-opacity-70 p-2 pixel-borders">
               <div className="text-fudencio-yellow font-pixel">Pontos: {score}</div>
             </div>
+            
+            {/* Indicador de dificuldade */}
+            <div className="bg-black bg-opacity-70 p-2 pixel-borders">
+              <div className="text-fudencio-orange font-pixel">Fúria: {difficultyLevel}</div>
+            </div>
           </div>
           
           {/* Game scene */}
@@ -172,6 +192,7 @@ const GameplayDemo = () => {
                 isAttacked={isAttacking}
                 onCollision={handleEnemyCollision}
                 onEnemyDefeated={handleEnemyDefeated}
+                difficulty={difficultyLevel}
               />
             ))}
             

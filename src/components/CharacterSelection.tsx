@@ -6,7 +6,7 @@ const characters = [
   {
     name: "Fudêncio",
     description: "Pequeno, arrogante e totalmente sem filtros. Atira palavrões como se fossem socos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/ec/Fud%C3%AAncio-personagem.jpg/revision/latest?cb=20180212114146",
+    imageUrl: "https://m.media-amazon.com/images/M/MV5BYjIxODhlMDAtYTcxZi00Y2RkLWEzMjctZjA3OTA5ZDg5NTYyXkEyXkFqcGc@._V1_.jpg",
     color: "fudencio-red",
     specialAttack: "Chuva de Palavrões"
   },

@@ -2,7 +2,6 @@
 import React from 'react';
 import GameLogo from '@/components/GameLogo';
 import CharacterSelection from '@/components/CharacterSelection';
-import SceneCollection from '@/components/SceneCollection';
 import GameplayFeatures from '@/components/GameplayFeatures';
 import { Button } from "@/components/ui/button";
 import { useNavigate } from 'react-router-dom';
@@ -45,8 +44,6 @@ const Index = () => {
         <CharacterSelection />
         
         <GameplayFeatures />
-        
-        <SceneCollection />
 
         <div className="mt-12 text-center">
           <p className="text-fudencio-pink text-lg">

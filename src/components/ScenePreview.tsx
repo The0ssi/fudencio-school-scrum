@@ -10,7 +10,7 @@ interface ScenePreviewProps {
 const ScenePreview = ({ title, imageUrl, description }: ScenePreviewProps) => {
   return (
     <div className="relative pixel-borders bg-fudencio-dark p-1 m-2">
-      <div className="w-full h-32 md:h-48 overflow-hidden bg-black">
+      <div className="w-full h-48 overflow-hidden bg-black">
         <div 
           className="w-full h-full bg-center bg-cover"
           style={{ 

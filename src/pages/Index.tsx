@@ -28,9 +28,6 @@ const Index = () => {
             >
               <Sword className="mr-2" /> Jogar Demo
             </Button>
-            <Button className="bg-fudencio-dark border-2 border-fudencio-yellow hover:bg-fudencio-yellow/20 text-fudencio-yellow text-xl px-8 py-6 font-pixel">
-              Tutorial
-            </Button>
           </div>
         </div>
         

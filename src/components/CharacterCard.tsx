@@ -17,11 +17,11 @@ const CharacterCard = ({ name, description, imageUrl, color, specialAttack }: Ch
       "flex flex-col items-center justify-center text-center h-full",
       `bg-${color}`
     )}>
-      <div className="w-full h-48 mb-4 flex items-center justify-center overflow-hidden">
+      <div className="w-full h-48 flex items-center justify-center overflow-hidden">
         <img 
           src={imageUrl} 
           alt={name} 
-          className="max-w-full max-h-full object-contain" 
+          className="w-32 h-32 object-contain" 
         />
       </div>
       

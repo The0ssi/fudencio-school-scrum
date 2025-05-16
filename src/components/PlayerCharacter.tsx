@@ -79,7 +79,7 @@ const PlayerCharacter = ({ onAttack, onPositionChange }: PlayerCharacterProps) =
           </>
         )}
         <img 
-          src="https://static.wikia.nocookie.net/fudencio/images/1/1d/Fud%C3%AAncio_PNG.png/revision/latest/scale-to-width-down/100"
+          src="https://static.wikia.nocookie.net/fudencio/images/1/1d/Fud%C3%AAncio_PNG.png/revision/latest/scale-to-width-down/100?cb=20250123110054"
           alt="Fudêncio" 
           className={cn(
             "h-24 w-auto pixelated",

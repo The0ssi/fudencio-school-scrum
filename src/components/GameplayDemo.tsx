@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import PlayerCharacter from './PlayerCharacter';
 import Enemy from './Enemy';
+import CorridorBackground from './CorridorBackground';
 import { Button } from './ui/button';
 import { useToast } from './ui/use-toast';
 import { Sword } from 'lucide-react';
@@ -155,15 +155,9 @@ const GameplayDemo = () => {
           {/* Game scene */}
           <div 
             className="game-scene relative w-full h-[300px] overflow-hidden border-4 border-black"
-            style={{
-              backgroundImage: "url('/corridor-bg.png')",
-              backgroundSize: "cover",
-              backgroundRepeat: "repeat-x",
-              imageRendering: "pixelated"
-            }}
           >
-            {/* Game floor */}
-            <div className="absolute bottom-0 w-full h-12 bg-fudencio-dark"></div>
+            {/* Custom background */}
+            <CorridorBackground />
             
             {/* Player character */}
             <PlayerCharacter onAttack={handlePlayerAttack} onPositionChange={updatePlayerPosition} />

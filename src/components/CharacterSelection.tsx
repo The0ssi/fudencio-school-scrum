@@ -6,35 +6,35 @@ const characters = [
   {
     name: "Fudêncio",
     description: "Pequeno, arrogante e totalmente sem filtros. Atira palavrões como se fossem socos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/1/1d/Fud%C3%AAncio_PNG.png/revision/latest/scale-to-width-down/1200?cb=20250123110054",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/ec/Fud%C3%AAncio-personagem.jpg/revision/latest?cb=20180212114146",
     color: "fudencio-red",
     specialAttack: "Chuva de Palavrões"
   },
   {
     name: "Conrado",
     description: "Eterno sofredor, usa suas lágrimas infinitas como arma sonora.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/d/d7/Conrado_PNG.png/revision/latest/smart/width/250/height/250?cb=20250123105846",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/7/7a/Conrado.jpg/revision/latest?cb=20180213161054",
     color: "fudencio-blue",
     specialAttack: "Choro Devastador"
   },
   {
     name: "Funérea",
     description: "Emo gótica depressiva com um guarda-chuva afiado e letal.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/1/18/Fun%C3%A9rea_PNG.png/revision/latest?cb=20250123111130",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/e4/FunereaAeronave.png/revision/latest?cb=20240601125344",
     color: "fudencio-purple",
     specialAttack: "Rodopio Sombrio"
   },
   {
     name: "Zezé Maria",
     description: "Militante extrema que usa cartazes e megafone contra inimigos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/f/f5/Z%C3%A9_Maria_PNG.png/revision/latest/smart/width/250/height/250?cb=20250123111152",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/e3/AntiZeMaria.JPG/revision/latest?cb=20240621065406",
     color: "fudencio-orange",
     specialAttack: "Protesto Ensurdecedor"
   },
   {
     name: "Popoto",
     description: "Fofo por fora, psicopata por dentro. Mordidas e brinquedos explosivos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/4/40/Popoto_PNG.png/revision/latest/scale-to-width-down/100?cb=20250123111241",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/c/c3/PopotoDesignAntesDaSerie.png/revision/latest/scale-to-width-down/1000?cb=20231101062344",
     color: "fudencio-green",
     specialAttack: "Fofura Mortal"
   }

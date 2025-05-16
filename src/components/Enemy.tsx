@@ -78,11 +78,16 @@ const Enemy = ({
       }}
     >
       {/* Inimigo com melhor feedback visual */}
-      <div className={cn(
-        "bg-fudencio-dark text-white p-2 h-20 w-16 flex items-center justify-center pixel-borders",
-        isHit ? "border-red-500 border-4" : ""
-      )}>
-        <span className="text-xs">Aluno<br/>Valentão</span>
+      <div className="relative">
+        <img 
+          src="https://static.wikia.nocookie.net/fudencio/images/e/ec/Cudi_PNG.png/revision/latest/scale-to-width-down/100?cb=20250123111321"
+          alt="Aluno Valentão" 
+          className={cn(
+            "h-20 w-auto pixelated",
+            isHit ? "border-red-500 border-4" : ""
+          )}
+          style={{ imageRendering: 'pixelated' }}
+        />
         
         {isHit && (
           <div className="absolute inset-0 bg-red-500 opacity-50 animate-pulse"></div>

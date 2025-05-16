@@ -8,7 +8,7 @@ const CorridorBackground = () => {
       <div 
         className="absolute inset-0 bg-center bg-cover"
         style={{ 
-          backgroundImage: `url('https://static.wikia.nocookie.net/fudencio/images/f/fe/Corredor2.png/revision/latest/scale-to-width-down/1000?cb=20250128234023')`,
+          backgroundImage: `url('https://static.wikia.nocookie.net/fudencio/images/f/fe/Corredor2.png')`,
           imageRendering: 'pixelated',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

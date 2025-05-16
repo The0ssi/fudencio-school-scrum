@@ -6,35 +6,35 @@ const characters = [
   {
     name: "Fudêncio",
     description: "Pequeno, arrogante e totalmente sem filtros. Atira palavrões como se fossem socos.",
-    imageUrl: "https://m.media-amazon.com/images/M/MV5BYjIxODhlMDAtYTcxZi00Y2RkLWEzMjctZjA3OTA5ZDg5NTYyXkEyXkFqcGc@._V1_.jpg",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/ec/Fud%C3%AAncio-personagem.jpg",
     color: "fudencio-red",
     specialAttack: "Chuva de Palavrões"
   },
   {
     name: "Conrado",
     description: "Eterno sofredor, usa suas lágrimas infinitas como arma sonora.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/7/7a/Conrado.jpg/revision/latest?cb=20180213161054",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/7/7a/Conrado.jpg",
     color: "fudencio-blue",
     specialAttack: "Choro Devastador"
   },
   {
     name: "Funérea",
     description: "Emo gótica depressiva com um guarda-chuva afiado e letal.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/e4/FunereaAeronave.png/revision/latest?cb=20240601125344",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/e4/FunereaAeronave.png",
     color: "fudencio-purple",
     specialAttack: "Rodopio Sombrio"
   },
   {
     name: "Zezé Maria",
     description: "Militante extrema que usa cartazes e megafone contra inimigos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/e3/AntiZeMaria.JPG/revision/latest?cb=20240621065406",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/e/e3/AntiZeMaria.JPG",
     color: "fudencio-orange",
     specialAttack: "Protesto Ensurdecedor"
   },
   {
     name: "Popoto",
     description: "Fofo por fora, psicopata por dentro. Mordidas e brinquedos explosivos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/c/c3/PopotoDesignAntesDaSerie.png/revision/latest/scale-to-width-down/1000?cb=20231101062344",
+    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/c/c3/PopotoDesignAntesDaSerie.png",
     color: "fudencio-green",
     specialAttack: "Fofura Mortal"
   }

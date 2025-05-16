@@ -80,7 +80,7 @@ const Enemy = ({
       {/* Inimigo com melhor feedback visual */}
       <div className="relative">
         <img 
-          src="https://static.wikia.nocookie.net/fudencio/images/e/ec/Cudi_PNG.png/revision/latest/scale-to-width-down/100?cb=20250123111321"
+          src="https://static.wikia.nocookie.net/fudencio/images/e/ec/Cudi_PNG.png"
           alt="Aluno Valentão" 
           className={cn(
             "h-20 w-auto pixelated",

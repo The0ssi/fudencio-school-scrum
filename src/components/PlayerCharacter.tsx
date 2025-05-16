@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { cn } from '@/lib/utils';
 import { Sword } from 'lucide-react';
@@ -79,7 +78,7 @@ const PlayerCharacter = ({ onAttack, onPositionChange }: PlayerCharacterProps) =
           </>
         )}
         <img 
-          src="https://static.wikia.nocookie.net/fudencio/images/1/1d/Fud%C3%AAncio_PNG.png/revision/latest/scale-to-width-down/100?cb=20250123110054"
+          src="https://static.wikia.nocookie.net/fudencio/images/1/1d/Fud%C3%AAncio_PNG.png"
           alt="Fudêncio" 
           className={cn(
             "h-24 w-auto pixelated",

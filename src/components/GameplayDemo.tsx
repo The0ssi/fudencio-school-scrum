@@ -20,7 +20,7 @@ const GameplayDemo = () => {
   const [gameStarted, setGameStarted] = useState(false);
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
-  const [difficultyLevel, setDifficultyLevel] = useState(0); // Novo estado para controlar a dificuldade
+  const [difficultyLevel, setDifficultyLevel] = useState(0);
   const { toast } = useToast();
   
   // Track player position from PlayerCharacter component
@@ -90,24 +90,44 @@ const GameplayDemo = () => {
     return () => clearInterval(difficultyTimer);
   }, [gameStarted, gameOver]);
   
-  // Spawn enemies periodically
+  // Spawn multiple enemies progressively after Fury level 2
   useEffect(() => {
     if (!gameStarted || gameOver) return;
     
-    // Velocidade de spawn aumenta com a dificuldade
+    // Determinar quantos inimigos spawnar simultaneamente baseado na fúria
+    const getEnemySpawnCount = () => {
+      if (difficultyLevel < 2) return 1; // Até fúria 1: apenas 1 inimigo
+      if (difficultyLevel < 4) return 2; // Fúria 2-3: 2 inimigos simultâneos
+      if (difficultyLevel < 6) return 3; // Fúria 4-5: 3 inimigos simultâneos
+      return Math.min(4, 2 + Math.floor(difficultyLevel / 2)); // Fúria 6+: até 4 inimigos
+    };
+    
+    // Máximo de inimigos na tela baseado na fúria
+    const maxEnemiesOnScreen = difficultyLevel < 2 ? 2 : Math.min(6, 3 + difficultyLevel);
+    
     const spawnInterval = setInterval(() => {
-      if (enemies.length < 3 + Math.floor(difficultyLevel / 3)) { // Mais inimigos em níveis mais altos
-        // Spawn from left or right
-        const spawnFromRight = Math.random() > 0.5;
-        setEnemies(prev => [
-          ...prev,
-          { 
-            id: Date.now(), 
-            position: spawnFromRight ? 95 : 5
-          }
-        ]);
+      if (enemies.length < maxEnemiesOnScreen) {
+        const enemiesToSpawn = getEnemySpawnCount();
+        const newEnemies: Enemy[] = [];
+        
+        for (let i = 0; i < enemiesToSpawn && (enemies.length + newEnemies.length) < maxEnemiesOnScreen; i++) {
+          // Alternar entre spawns da esquerda e direita para criar caos
+          const spawnFromRight = Math.random() > 0.5;
+          // Adicionar variação nas posições iniciais para evitar sobreposição
+          const basePosition = spawnFromRight ? 95 : 5;
+          const positionVariation = (Math.random() - 0.5) * 10; // Variação de ±5%
+          
+          newEnemies.push({
+            id: Date.now() + i, // Garantir IDs únicos
+            position: Math.max(0, Math.min(100, basePosition + positionVariation))
+          });
+        }
+        
+        if (newEnemies.length > 0) {
+          setEnemies(prev => [...prev, ...newEnemies]);
+        }
       }
-    }, Math.max(3000 - (difficultyLevel * 200), 1000)); // Spawn mais rápido com maior dificuldade, mínimo 1 segundo
+    }, Math.max(3000 - (difficultyLevel * 300), 800)); // Spawn mais frequente e mais agressivo
     
     return () => clearInterval(spawnInterval);
   }, [gameStarted, gameOver, enemies.length, difficultyLevel]);
@@ -166,9 +186,17 @@ const GameplayDemo = () => {
               <div className="text-fudencio-yellow font-pixel">Pontos: {score}</div>
             </div>
             
-            {/* Indicador de dificuldade */}
+            {/* Indicador de fúria com feedback visual melhorado */}
             <div className="bg-black bg-opacity-70 p-2 pixel-borders">
-              <div className="text-fudencio-orange font-pixel">Fúria: {difficultyLevel}</div>
+              <div className={`font-pixel ${difficultyLevel >= 2 ? 'text-red-500 animate-pulse' : 'text-fudencio-orange'}`}>
+                Fúria: {difficultyLevel}
+                {difficultyLevel >= 2 && <span className="text-red-400 ml-1">⚠️</span>}
+              </div>
+            </div>
+            
+            {/* Contador de inimigos na tela */}
+            <div className="bg-black bg-opacity-70 p-2 pixel-borders">
+              <div className="text-white font-pixel">Valentões: {enemies.length}</div>
             </div>
           </div>
           
@@ -214,6 +242,9 @@ const GameplayDemo = () => {
           {/* Game instructions */}
           <div className="mt-4 text-sm text-white">
             <p>Teclas: Setas para andar | Espaço para pular | X para atacar</p>
+            {difficultyLevel >= 2 && (
+              <p className="text-red-400 animate-pulse">⚠️ MÚLTIPLOS VALENTÕES DETECTADOS! A briga está saindo do controle!</p>
+            )}
           </div>
         </div>
       )}

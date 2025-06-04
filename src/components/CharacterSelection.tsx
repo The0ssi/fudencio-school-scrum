@@ -13,7 +13,7 @@ const characters = [
   {
     name: "Conrado",
     description: "Eterno sofredor, usa suas lágrimas infinitas como arma sonora.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/d/d7/Conrado_PNG.png/revision/latest?cb=20250123105846",
+    imageUrl: "https://i.pinimg.com/736x/00/7f/91/007f9161f71420e05bc3d6a9539eb12d.jpg",
     color: "fudencio-blue",
     specialAttack: "Choro Devastador"
   },

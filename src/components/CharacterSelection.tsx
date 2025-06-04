@@ -6,7 +6,7 @@ const characters = [
   {
     name: "Fudêncio",
     description: "Pequeno, arrogante e totalmente sem filtros. Atira mimimi como se fossem socos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/1/1d/Fud%C3%AAncio_PNG.png/revision/latest?cb=20250123110054",
+    imageUrl: "https://i.pinimg.com/736x/c0/eb/93/c0eb930fbed9feb9370d230d83765ecf.jpg",
     color: "fudencio-red",
     specialAttack: "Chuva de Mimimi´s"
   },
@@ -20,21 +20,21 @@ const characters = [
   {
     name: "Funérea",
     description: "Emo gótica depressiva com um guarda-chuva afiado e letal.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/1/18/Fun%C3%A9rea_PNG.png/revision/latest?cb=20250123111130",
+    imageUrl: "https://i.pinimg.com/736x/94/4d/be/944dbe7218317165d306f24979ab9102.jpg",
     color: "fudencio-purple",
     specialAttack: "Rodopio Sombrio"
   },
   {
     name: "Zezé Maria",
     description: "Militante extrema que usa cartazes e megafone contra inimigos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/f/f5/Z%C3%A9_Maria_PNG.png/revision/latest?cb=20250123111152",
+    imageUrl: "https://i.pinimg.com/736x/8d/37/07/8d3707301607f542d48d20dd1da097fd.jpg",
     color: "fudencio-orange",
     specialAttack: "Protesto Ensurdecedor"
   },
   {
     name: "Popoto",
     description: "Fofo por fora, psicopata por dentro. Mordidas e brinquedos explosivos.",
-    imageUrl: "https://static.wikia.nocookie.net/fudencio/images/4/40/Popoto_PNG.png/revision/latest?cb=20250123111241",
+    imageUrl: "https://i.pinimg.com/736x/ab/34/56/ab3456d25402dc14ea628288298a2fe6.jpg",
     color: "fudencio-green",
     specialAttack: "Fofura Mortal"
   }

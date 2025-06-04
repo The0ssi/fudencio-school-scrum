@@ -151,14 +151,13 @@ const GameplayDemo = () => {
     <div className="w-full">
       {!gameStarted ? (
         <div className="flex flex-col gap-4 items-center justify-center p-8">
-          <h2 className="text-3xl font-bold text-fudencio-yellow">Fudêncio: Caos Escolar</h2>
+          <h2 className="text-3xl font-bold text-fudencio-yellow">Corrado: Caos Escolar</h2>
           <p className="text-white">Demo de Gameplay - Fase: Corredor Escolar</p>
           
           <div className="my-4 pixel-borders p-4 bg-fudencio-dark">
             <h3 className="text-fudencio-yellow mb-2">Controles:</h3>
             <p className="text-white text-sm">Setas para andar</p>
-            <p className="text-white text-sm">Espaço para pular</p>
-            <p className="text-white text-sm">X para atacar (palavrão)</p>
+            <p className="text-white text-sm">X para atacar</p>
           </div>
           
           <Button 
@@ -241,10 +240,7 @@ const GameplayDemo = () => {
           
           {/* Game instructions */}
           <div className="mt-4 text-sm text-white">
-            <p>Teclas: Setas para andar | Espaço para pular | X para atacar</p>
-            {difficultyLevel >= 2 && (
-              <p className="text-red-400 animate-pulse">⚠️ MÚLTIPLOS VALENTÕES DETECTADOS! A briga está saindo do controle!</p>
-            )}
+            <p>Teclas: Setas para andar | X para atacar</p>
           </div>
         </div>
       )}

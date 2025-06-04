@@ -40,8 +40,7 @@ const GamePage = () => {
               <h4 className="text-fudencio-pink mb-2">Controles:</h4>
               <ul className="text-white space-y-2">
                 <li>→ / ← : Andar para os lados</li>
-                <li>Espaço: Pular</li>
-                <li>X: Ataque (Palavrão Atordoante)</li>
+                <li>X: Ataque (Mimimi Atordoante)</li>
               </ul>
             </div>
             
@@ -49,7 +48,7 @@ const GamePage = () => {
               <h4 className="text-fudencio-pink mb-2">Objetivo:</h4>
               <p className="text-white">
                 Sobreviva no corredor escolar derrotando os valentões que se aproximam.
-                Use o ataque especial de palavrões do Fudêncio para atordoá-los e derrotá-los!
+                Use o ataque especial de Mimimi´s do personagem para atordoá-los e derrotá-los!
               </p>
             </div>
           </div>
@@ -57,7 +56,7 @@ const GamePage = () => {
         
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-400">
-            Demo Técnica • Fudêncio: Caos Escolar • Jogo Conceitual • 2025
+            Demo Técnica • Corrado: Caos Escolar • Jogo Conceitual • 2025
           </p>
         </div>
       </div>

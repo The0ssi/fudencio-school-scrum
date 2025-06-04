@@ -34,7 +34,7 @@ const Index = () => {
         <div className="my-12 pixel-borders p-6 bg-black bg-opacity-50 glitch">
           <h2 className="text-3xl font-bold text-fudencio-green mb-4">ALERTA DE CONTEÚDO</h2>
           <p className="text-fudencio-yellow">
-            Este jogo contém humor ácido, linguagem imprópria, referências escrachadas e é completamente inadequado para crianças e adultos sensíveis. É tipo aquela série que você assistia escondido, só que agora em formato jogável!
+            Este jogo contém humor ácido, mimimi e referências escrachadas. É baseap na animação que conta as desventuras de Conrado, um caqui que estuda com uma série de mini delinquentes, só que agora em formato jogável!
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const Index = () => {
 
         <div className="mt-12 text-center">
           <p className="text-fudencio-pink text-lg">
-            Inspirado na série "Fudêncio e Seus Amigos" • Estilo visual propositalmente tosco
+            Inspirado na série "Fudêncio e Seus Amigos" 
           </p>
           <p className="text-sm mt-2 text-gray-400">
             Todas as imagens e referências a personagens pertencem a seus respectivos proprietários. 

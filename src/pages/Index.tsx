@@ -18,7 +18,7 @@ const Index = () => {
           
           <p className="text-lg mt-4 max-w-3xl text-center">
             Um beat 'em up 2D side-scroller com visual propositalmente tosco, humor ácido e 
-            gameplay caótico inspirado na série animada mais politicamente incorreta do Brasil!
+            gameplay caótico inspirado na série animada mais mais do Brasil!
           </p>
 
           <div className="flex gap-4 mt-6">

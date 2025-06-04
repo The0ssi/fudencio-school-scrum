@@ -21,14 +21,14 @@ const characters = [
     name: "Funérea",
     description: "Emo gótica depressiva com um guarda-chuva afiado e letal.",
     imageUrl: "https://i.pinimg.com/736x/94/4d/be/944dbe7218317165d306f24979ab9102.jpg",
-    color: "fudencio-purple",
+    color: "fudencio-yellow",
     specialAttack: "Rodopio Sombrio"
   },
   {
     name: "Zezé Maria",
     description: "Militante extrema que usa cartazes e megafone contra inimigos.",
     imageUrl: "https://i.pinimg.com/736x/8d/37/07/8d3707301607f542d48d20dd1da097fd.jpg",
-    color: "fudencio-orange",
+    color: "fudencio-pink",
     specialAttack: "Protesto Ensurdecedor"
   },
   {
